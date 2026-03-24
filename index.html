@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenz Coffee House | Authentic Yemeni Organic Brews</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --espresso: #0a0a0a;
+            --gold: #d4af37;
+            --cream: #fdfbf7;
+            --off-white: #f4efe6;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); background-color: var(--cream); color: var(--espresso); line-height: 1.6; }
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+        .section-padding { padding: 6rem 0; }
+
+        /* Navigation */
+        nav { position: fixed; top: 0; width: 100%; background-color: rgba(10, 10, 10, 0.98); z-index: 1000; padding: 0.8rem 0; border-bottom: 1px solid var(--gold); }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        
+        .logo-wrapper { display: flex; align-items: center; text-decoration: none; gap: 12px; }
+        .logo-svg { height: 50px; width: 50px; }
+        .logo-text { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--gold); letter-spacing: 2px; }
+
+        .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+        .nav-links a { text-decoration: none; color: white; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; transition: 0.3s; }
+        .nav-links a:hover { color: var(--gold); }
+        
+        .btn-order { background: var(--gold); color: var(--espresso) !important; padding: 8px 20px; border-radius: 4px; }
+
+        /* Hero */
+        #hero { height: 75vh; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=2070'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--cream); border-bottom: 5px solid var(--gold); }
+        .hero-content h1 { font-family: var(--font-heading); font-size: 4.5rem; color: var(--gold); margin-bottom: 0.5rem; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+        .hero-content p { font-size: 1.4rem; font-family: var(--font-heading); font-style: italic; text-shadow: 1px 1px 5px rgba(0,0,0,0.5); }
+
+        /* Sections */
+        .section-header { text-align: center; margin-bottom: 4rem; }
+        .section-header h2 { font-family: var(--font-heading); font-size: 3rem; color: var(--espresso); }
+        .section-header div { width: 80px; height: 3px; background: var(--gold); margin: 20px auto; }
+
+        /* Menu */
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 4rem; }
+        .category-box h3 { font-family: var(--font-heading); font-size: 2rem; color: var(--gold); border-bottom: 1px solid #ddd; padding-bottom: 10px; margin-bottom: 2rem; }
+        .menu-item { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1rem; border-bottom: 1px dashed #ccc; padding-bottom: 5px; }
+        .item-name { font-weight: 500; font-size: 1rem; }
+        .item-price { font-family: var(--font-heading); font-weight: 700; color: var(--espresso); }
+
+        /* Map & Info */
+        #location { background-color: var(--off-white); }
+        .loc-content { display: flex; gap: 4rem; flex-wrap: wrap; }
+        .loc-info { flex: 1; min-width: 300px; }
+        .map-box { flex: 1.5; min-width: 300px; height: 450px; border-radius: 8px; border: 2px solid var(--gold); overflow: hidden; }
+        .hours-list { list-style: none; margin-top: 2rem; }
+        .hours-list li { display: flex; justify-content: space-between; padding: 15px 0; border-bottom: 1px solid rgba(0,0,0,0.1); font-weight: 500; }
+
+        footer { background: var(--espresso); color: white; padding: 4rem 0; text-align: center; border-top: 3px solid var(--gold); }
+        .social-links a { color: var(--gold); text-decoration: none; margin: 0 15px; font-weight: 600; font-size: 0.85rem; letter-spacing: 2px; }
+
+        @media (max-width: 768px) { .hero-content h1 { font-size: 2.8rem; } .nav-links { display: none; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-container">
+            <a href="#" class="logo-wrapper">
+                <svg class="logo-svg" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="#d4af37" stroke-width="2.5"/>
+                    <path d="M35 45 C 35 65, 65 65, 65 45" fill="none" stroke="#d4af37" stroke-width="3"/>
+                    <path d="M42 35 Q 50 25 58 35" fill="none" stroke="#d4af37" stroke-width="2"/>
+                    <circle cx="58" cy="28" r="2" fill="#d4af37"/>
+                </svg>
+                <span class="logo-text">KENZ</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">Story</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#location">Visit</a></li>
+                <li><a href="https://linktr.ee/kenzcoffeehouse" class="btn-order" target="_blank">Order Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="hero">
+        <div class="hero-content">
+            <h1>Kenz Coffee House</h1>
+            <p>Premium Yemeni Coffee - 100% Organic</p>
+        </div>
+    </header>
+
+    <section id="about" class="section-padding">
+        <div class="container" style="max-width: 900px; text-align: center;">
+            <div class="section-header">
+                <h2>The Treasure of Yemen</h2>
+                <div></div>
+            </div>
+            <p style="font-size: 1.1rem;">"Kenz" translates to <strong>Treasure</strong> in Arabic. Founded by Abdulnaser Alnajjar and Moshtak Alamri, our mission is to bring the rich, ancient traditions of Yemeni coffee culture to the heart of Canton, Michigan. We source 100% organic beans directly from Yemeni farmers to ensure a world-class experience in every cup.</p>
+        </div>
+    </section>
+
+    <section id="menu" class="section-padding" style="background: #fff;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Menu</h2>
+                <p style="color: #666; font-style: italic;">All prices include tax.</p>
+                <div></div>
+            </div>
+
+            <div class="menu-grid">
+                <div class="category-box">
+                    <h3>Bakery & Sweets</h3>
+                    <div class="menu-item"><span>Dubai Chocolate Bar</span><span>$10.00</span></div>
+                    <div class="menu-item"><span>Pistachio Milk Cake</span><span>$8.00</span></div>
+                    <div class="menu-item"><span>Biscoff Milk Cake</span><span>$8.00</span></div>
+                    <div class="menu-item"><span>Strawberry Milk Cake</span><span>$8.00</span></div>
+                    <div class="menu-item"><span>Classic Cheesecake</span><span>$8.00</span></div>
+                    <div class="menu-item"><span>Chocolate Croissant</span><span>$7.00</span></div>
+                    <div class="menu-item"><span>Yemeni Honeycomb</span><span>$7.00</span></div>
+                    <div class="menu-item"><span>Cookie Dough Cheesecake</span><span>$7.50</span></div>
+                    <div class="menu-item"><span>Yemeni Sabayah</span><span>$6.00</span></div>
+                    <div class="menu-item"><span>Baklava (Small)</span><span>$6.00</span></div>
+                </div>
+
+                <div class="category-box">
+                    <h3>Yemeni Traditional</h3>
+                    <div class="menu-item"><span>Sana'ani Coffee</span><span>$5.00</span></div>
+                    <div class="menu-item"><span>Jubani Coffee</span><span>$5.00</span></div>
+                    <div class="menu-item"><span>Qisher (Coffee Husk)</span><span>$5.00</span></div>
+                    <div class="menu-item"><span>Mofawar</span><span>$5.00</span></div>
+                    <div class="menu-item"><span>Adeni Chai</span><span>$5.00</span></div>
+                    <div class="menu-item"><span>Yemeni Black Tea</span><span>$5.00</span></div>
+                    <div class="menu-item"><span>Turkish Coffee</span><span>$5.00</span></div>
+                </div>
+
+                <div class="category-box">
+                    <h3>Espresso & Refreshers</h3>
+                    <div class="menu-item"><span>Kenz Latte</span><span>$7.00</span></div>
+                    <div class="menu-item"><span>Caramel Macchiato</span><span>$7.00</span></div>
+                    <div class="menu-item"><span>Matcha Latte</span><span>$6.50</span></div>
+                    <div class="menu-item"><span>Strawberry Refresher</span><span>$7.00</span></div>
+                    <div class="menu-item"><span>Mango Mojito</span><span>$7.00</span></div>
+                    <div class="menu-item"><span>Wildberry Refresher</span><span>$7.00</span></div>
+                    <div class="menu-item"><span>Peach Mojito</span><span>$7.00</span></div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 4rem;">
+                <a href="https://linktr.ee/kenzcoffeehouse" class="btn-order" style="text-decoration: none; font-weight: 700; padding: 15px 40px; font-size: 1.1rem;" target="_blank">View Full Menu & Order</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="location" class="section-padding">
+        <div class="container">
+            <div class="loc-content">
+                <div class="loc-info">
+                    <div class="section-header" style="text-align: left; margin-bottom: 2rem;">
+                        <h2 style="font-size: 2.5rem;">Visit Us</h2>
+                        <div style="margin: 10px 0;"></div>
+                    </div>
+                    <p style="font-size: 1.2rem; margin-bottom: 5px;">42456 Cherry Hill Rd</p>
+                    <p style="font-size: 1.2rem;">Canton, Michigan 48187</p>
+                    <p style="margin-top: 15px; font-weight: 700; color: var(--gold); font-size: 1.3rem;">(734) 892-2597</p>
+                    
+                    <ul class="hours-list">
+                        <li><span>Mon - Thu</span> <span>8:00 AM - 11:00 PM</span></li>
+                        <li><span>Fri - Sat</span> <span>8:00 AM - 12:00 AM</span></li>
+                        <li><span>Sunday</span> <span>8:30 AM - 11:00 PM</span></li>
+                    </ul>
+                </div>
+                <div class="map-box">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2951.6453664796395!2d-83.5134762234057!3d42.286121471200234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883b497676767677%3A0x7b7b7b7b7b7b7b7b!2s42456%20Cherry%20Hill%20Rd%2C%20Canton%2C%20MI%2048187!5e0!3m2!1sen!2sus!4v1711310000000!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="social-links" style="margin-bottom: 2rem;">
+                <a href="https://www.instagram.com/kenzcoffeehouse/" target="_blank">INSTAGRAM</a>
+                <a href="https://www.facebook.com/people/Kenz-Coffee-House/61555725227749/" target="_blank">FACEBOOK</a>
+                <a href="https://www.tiktok.com/@kenzcoffeehouse" target="_blank">TIKTOK</a>
+            </div>
+            <p style="font-family: var(--font-heading); font-size: 1.8rem; color: var(--gold); margin-bottom: 15px; letter-spacing: 5px;">KENZ</p>
+            <p style="font-size: 0.8rem; opacity: 0.6; letter-spacing: 1px;">© 2026 Kenz Coffee House. Authentic Yemeni Organic Brews.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
